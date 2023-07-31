@@ -1,0 +1,17 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <form method="post" action="api/v1/users/">
+        {%csrf_token%}
+        <input type="text" id="id" name="username" placeholder="ID">
+        <input type="text" id="password" name="password" placeholder="PW">
+        <input type="submit" value="회원가입">
+    </form>
+</body>
+</html>

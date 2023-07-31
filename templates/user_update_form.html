@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{% static 'script/csrf.js' %}"></script>
+    <title>유저정보수정</title>
+</head>
+{% include 'header.html' %}
+<body>
+    
+    {% if user.is_authenticated %}
+        <p>Login : {{user}}</p>
+    {% else %}
+        <p>NO LOGIN!</p>
+    {% endif %}
+    
+    <form id="{{ user.id }}" onsubmit="return false">
+        {% csrf_token %}
+        <input type="text" id="name" name="name" value="{{user.name}}" >
+        <input type="text" id="username" name="username" value="{{user.id}}" readonly >
+        <input type="text" id="password" name="password" placeholder="비밀번호입력" >
+        <input type="text" id="email" name="email" value="{{user.email}}" placeholder="email">
+        <button onclick="update_user()">회원정보수정</button>
+        <button onclick="delete_user()">계정삭제</button>
+    </form>
+    <script src="{% static 'script/user-api.js'%}"></script>
+</body>
+</html>

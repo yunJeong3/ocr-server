@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+    <title>board</title>
+</head>
+{% include 'header.html' %}
+<body>
+    <div id="board-contents">
+        <input type="text" id="title" name="title" readonly>
+        <p type="text" id="username"></p>
+        <textarea id="content" name="content" readonly></textarea>
+        <div id="image-container">
+            <img id="file" name="file" src="">
+        </div>
+        <input type="datetime" id="created_at" readonly>
+        <input type="datetime" id="modefied_at" readonly>
+    </div>
+    <script src="{% static 'script/board-api.js' %}"></script>
+</body>
+{% include 'footer.html' %}
+</html>

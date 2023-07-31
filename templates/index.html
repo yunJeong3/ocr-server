@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/style/grid.css' %}">
+    <title>OCR-SERVER</title>
+</head>
+{% include 'header.html' %}
+<body>
+    {% if user.is_authenticated %}
+        <h1>{{user}}님 환영합니다.</h1>
+    {% endif %}
+    <h1>ORM</h1>
+    <h1>Board</h1>
+    <div id="container">
+        {% for board in data %}
+            <ul>
+                <li><h4 id="title">{{ board.title }}</h4></li>
+                <li><p id="name">{{ board.username }}</p></li>
+                <li><p id="content">{{ board.content }}</p></li>
+                <li><input type="datetime" value="{{board.modefied_at}}" readonly></li>
+                <li><p id="file_name">{{ board.file }}</p></li>
+            </ul>
+        {% endfor %}
+    </div>
+    
+</body>
+{% include 'footer.html' %}
+</html>
