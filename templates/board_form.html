@@ -11,13 +11,13 @@
 </head>
 <body> 
     <h2>게시판</h2>
-    <form method="POST" action="api/v1/boards/" enctype="multipart/form-data">
+    <form method="POST" action="../api/v1/boards/" enctype="multipart/form-data">
         {%csrf_token%}
         <input type="text" id="title" name="title" placeholder="title">
         <textarea id="content" name="content"></textarea>
         <input type="file" id="file" name="file" accept="image/png, image/jpg,  image/jpeg, image/gif">
         <input type="submit">
     </form>
-    
+    <script src="{% static 'script/board-api.js' %}"></script>
 </body>
 </html>

@@ -9,17 +9,17 @@ $.ajax({
 
         $('#container').append(`
         <div class="board">
-            <ul>
-                <li><h4 id="title">${board.title}</li>
-                <li><p id="name">${board.username.username}</li>
-                <li>
-                    <a href="/board/${board.post_no}">
+            <a href="/board/${board.post_no}">
+                <ul>
+                    <li><h4 id="title">${board.title}</li>
+                    <li><p id="name">${board.username.username}</li>
+                    <li>
                         <p id="content">${board.content}
-                    </a>
-                </li>
-                <li><input type="datetime" value="${board.modefied_at}" readonly></li>
-                <li><p id="file_name">${board.file}</li>
-            </ul>
+                    </li>
+                    <li><input type="datetime" value="${board.modefied_at}" readonly></li>
+                    <li><p id="file_name">${board.file}</li>
+                </ul>
+            </a>
         </div>
         `)
     })
