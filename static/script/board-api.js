@@ -22,13 +22,14 @@ $.ajax({
     // $('#file').attr('src', board.file);
     $('#created_at').val(board.created_at);
     $('#modefied_at').val(board.modefied_at);
-    $('#image_link').val(board.image_link);
+    // $('#image_link').val(board.image_link);
+    $('#image_link').attr('src', board.image_link);
 });
 
 $('#chkBtn').click(function(){
     var gSize = "";
     var checkedItems = $("input[name=lang]:checked");
-    var image_link = $('#image_link').val();
+    var image_link = $('#image_link').attr('src');
     console.log(image_link);
 
     if(image_link != "") {

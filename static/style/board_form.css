@@ -14,3 +14,17 @@ ul, ol {
 a {
     text-decoration: none
 }
+
+#image-area{
+    display: flex;
+    
+}
+
+#image_link{
+    width: 50%;
+    height: 70%;
+}
+
+#text{
+    font-size: 20px;
+}

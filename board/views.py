@@ -10,6 +10,7 @@ from .models import Board
 from .serializers import BoardSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from pyuploadcare import Uploadcare, File
+import os
 
 def say_hello(request) :
     return render(request, "index.html", {
@@ -48,9 +49,12 @@ class Boards(APIView) :
                     print("ucare_file.uuid: ", ucare_file.uuid)
                     image_url = f"https://ucarecdn.com/{ucare_file.uuid}/"
                     board.image_link = image_url
-                    
+            
+            mediafile = f"media/{board.file}"        
             board.username = request.user
             board.save()
+            if os.path.isfile(mediafile):
+                os.remove(mediafile)
             return redirect(f'/board/{board.pk}')
         
         return Response(serializer.errors)

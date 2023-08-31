@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'style/form.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'style/form.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'style/board_form.css' %}">
     <script src="{% static 'script/csrf.js' %}"></script>
     <title>board</title>
 </head>
@@ -21,7 +22,7 @@
         <input type="datetime" id="modefied_at" readonly>
         
         <!-- <input type="text" id="image_link" name="image_link" readonly> -->
-        <img src="image_link" name="image_link">
+        
 
         <input type="checkbox" id="lang" name="lang" value="kor">kor
         <input type="checkbox" id="lang" name="lang" value="eng">eng
@@ -29,9 +30,14 @@
         <input type="checkbox" id="lang" name="lang" value="jpn">jpn
 
         <button id="chkBtn">이미지 텍스트로 변환하기</button>
-        <div>
-            <p id="text"></p>
+
+        <div id="image-area">
+            <img src="" name="image_link" id="image_link">
+            <div>
+                <p id="text"></p>
+            </div>
         </div>
+
     </div>
     <script src="{% static 'script/board-api.js' %}"></script>
 </body>
