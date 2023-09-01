@@ -6,14 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static '/style/grid.css' %}">
+    <link rel="stylesheet" href="{% static '/style/board_write.css' %}">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+{% include 'header.html' %}
 <body> 
-    <h2>게시판</h2>
+    <h2>게시글 작성</h2>
     <form method="POST" action="../api/v1/boards/" enctype="multipart/form-data">
         {%csrf_token%}
-        <input type="text" id="title" name="title" placeholder="title">
+        <p class="sub_title">제목</p>
+        <input type="text" id="title" name="title" placeholder="제목을 작성해주세요.">
         <textarea id="content" name="content"></textarea>
         <input type="file" id="file" name="file" accept="image/png, image/jpg,  image/jpeg, image/gif">
         <input type="submit">

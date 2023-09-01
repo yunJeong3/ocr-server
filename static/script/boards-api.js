@@ -24,3 +24,8 @@ $.ajax({
         `)
     })
 });
+
+// 버튼 클릭 시 '게시글 작성하기' 페이지로 이동
+function writeBtn(){
+    location.href = "/board/write";
+}

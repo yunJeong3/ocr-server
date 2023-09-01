@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,31 +11,80 @@
     <title>board</title>
 </head>
 {% include 'header.html' %}
+
 <body>
     <div id="board-contents">
-        <input type="text" id="title" name="title" readonly>
-        <p type="text" id="username"></p>
-        <textarea id="content" name="content" readonly></textarea>
+        <p class="sub_title">제목</p>
+        <input type="text" class="content_area" id="title" name="title" readonly>
+
+        <p class="sub_title">작성자</p>
+        <p type="text" class="content_area" id="username"></p>
+
+        <p class="sub_title">내용</p>
+        <textarea class="content_area" id="content" name="content" readonly></textarea>
         <!-- <div id="image-container">
             <img id="file" name="file" src="">
         </div> -->
-        <input type="datetime" id="created_at" readonly>
-        <input type="datetime" id="modefied_at" readonly>
-        
+
+        <p class="sub_title">게시글 작성일</p>
+        <input type="datetime" class="content_area" id="created_at" readonly>
+        <p class="sub_title">게시글 수정일</p>
+        <input type="datetime" class="content_area" id="modified_at" readonly>
+
         <!-- <input type="text" id="image_link" name="image_link" readonly> -->
-        
 
-        <input type="checkbox" id="lang" name="lang" value="kor">kor
-        <input type="checkbox" id="lang" name="lang" value="eng">eng
-        <input type="checkbox" id="lang" name="lang" value="fra">fra
-        <input type="checkbox" id="lang" name="lang" value="jpn">jpn
 
-        <button id="chkBtn">이미지 텍스트로 변환하기</button>
+        <div id="check_language_area">
+            <p>* 사진에 포함된 언어를 선택해주세요! <span>(1개 이상 체크해주세요)</span></p>
+            <ul>
+                <li>
+                    <input type="checkbox" id="langKo" name="lang" value="kor"> 
+                    <label for="langKo">kor</label>
+                </li>
 
-        <div id="image-area">
-            <img src="" name="image_link" id="image_link">
-            <div>
+                <li>
+                    <input type="checkbox" id="langEn" name="lang" value="eng">
+                    <label for="langEn">eng</label>
+                </li>
+
+                <li>
+                    <input type="checkbox" id="langFr" name="lang" value="fra">
+                    <label for="langFr">fra</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="langJp" name="lang" value="jpn">
+                    <label for="langJp">jpn</label>
+                </li>
+            </ul>
+    
+            <button id="chkBtn">이미지 텍스트로 변환하기</button>
+        </div>
+
+        <div id="image_area">
+            <div id="image_wrapper">
+                <p class="text_title">[ 사진 ]</p>
+                <img src="" name="image_link" id="image_link">
+            </div>
+
+            <div id="text_wrapper">
+                <p class="text_title">[ 사진에서 텍스트로 변환된 내용 ]</p>
                 <p id="text"></p>
+            </div>
+        </div>
+
+        <div id="loading_container" style="display: none;">
+            <div id="loading_content">
+                <div class="loadingio-spinner-ellipsis-qbmqp3g0q">
+                    <div class="ldio-1e8ezxi2ks">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <p>이미지를 텍스트로 변환중입니다...</p>
             </div>
         </div>
 
@@ -42,4 +92,5 @@
     <script src="{% static 'script/board-api.js' %}"></script>
 </body>
 {% include 'footer.html' %}
+
 </html>

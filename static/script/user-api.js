@@ -26,10 +26,10 @@ function update_user() {
 
     }).done(function(response){
         console.log(response);
-        alert('변경 성공!')
+        alert('변경 성공!');
     }).fail(function(error){
         console.log(error);
-        alert('변경 오류')
+        alert('변경 오류');
     })
 
 }

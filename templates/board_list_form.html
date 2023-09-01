@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Board List</title>
     <link rel="stylesheet" href="{% static '/style/grid.css' %}">
+    <link rel="stylesheet" href="{% static '/style/board_list_form.css' %}">
 </head>
 {% include 'header.html' %}
 <body>
+    <div id="button_area">
+        <button id="board_write" onclick="writeBtn()">게시글 작성하기</button>
+    </div>
+    
     <div id="container">
     </div>
     <script src="{% static 'script/boards-api.js' %}"></script>

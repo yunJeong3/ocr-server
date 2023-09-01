@@ -1,0 +1,21 @@
+#title {
+    border: none;
+    font-size: 20px;
+    margin: 20px;
+}
+
+#content {
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 20px;
+    width: 90%;
+    height: 300px;
+}
+
+.sub_title{
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
